@@ -55,6 +55,10 @@ console.log(letSum(arrayEven));
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
+const letSum2 = (arr) => arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(letSum2(arrayEven));
+
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
@@ -290,6 +294,10 @@ console.log(moviesNewmillennium(movies));
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+const yearsSum = (arr) => arr.reduce((accumulator, value) => accumulator + parseInt(value.Year), 0);
+
+console.log(yearsSum(movies));
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
