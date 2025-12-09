@@ -31,18 +31,25 @@ console.log(exampleArray);
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
-const arrayEven = exampleArray.filter((num) => num % 2 === 0);
+const evenArray = (arr) => {
+  return arr.filter((num) => num % 2 === 0);
+};
+
+const arrayEven = evenArray(exampleArray);
+
 console.log(arrayEven);
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-let sum = 0;
+const letSum = (arr) => {
+  let sum = 0;
+  arr.forEach((num) => (sum += num));
+  return sum;
+};
 
-arrayEven.forEach((num) => (sum += num));
-
-console.log(sum);
+console.log(letSum(arrayEven));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -52,9 +59,11 @@ console.log(sum);
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 
-let n = 10;
-const secondArray = arrayEven.map((elem) => elem + n);
-console.log(secondArray);
+const incrementElement = (arr, n) => {
+  return arr.map((elem) => elem + n);
+};
+
+console.log(incrementElement(arrayEven, 10));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
@@ -64,8 +73,14 @@ console.log(secondArray);
 stringArray = ["fdgds", "er", "45kk"];
 console.log(stringArray);
 
-const lengthStrings = stringArray.map((str) => str.length);
-console.log(lengthStrings);
+// const lengthStrings = (arr) => {
+//   let newArr = arr.map((str) => str.length);
+//   return newArr;
+// };
+
+const lengthStrings = (arr) => arr.map((str) => str.length);
+
+console.log(lengthStrings(stringArray));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
@@ -187,6 +202,13 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+
+// let older = 10000;
+
+// movies.forEach(movie){
+//   if (movies[movie].Year<older) {older=movies[movie].Year}
+
+// }
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
