@@ -61,9 +61,26 @@ console.log(secondArray);
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
+stringArray = ["fdgds", "er", "45kk"];
+console.log(stringArray);
+
+const lengthStrings = stringArray.map((str) => str.length);
+console.log(lengthStrings);
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
+const oddNumberArray = () => {
+  const oddArray = [];
+  oddArray[0] = 1;
+  for (let i = 1; i < 50; i++) {
+    oddArray[i] = oddArray[i - 1] + 2;
+  }
+  return oddArray;
+};
+
+console.log(oddNumberArray());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
