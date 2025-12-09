@@ -15,13 +15,34 @@ console.log(strResult(stringa1, stringa2).toUpperCase());
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 
+const casualArray = () => {
+  const array = [];
+  for (let i = 0; i < 10; i++) {
+    array[i] = Math.floor(Math.random() * 101);
+  }
+  return array;
+};
+
+const exampleArray = casualArray();
+console.log(casualArray());
+console.log(exampleArray);
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
+const arrayEven = exampleArray.filter((num) => num % 2 === 0);
+console.log(arrayEven);
+
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+
+let sum = 0;
+
+arrayEven.forEach((num) => (sum += num));
+
+console.log(sum);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -30,6 +51,10 @@ console.log(strResult(stringa1, stringa2).toUpperCase());
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+let n = 10;
+const secondArray = arrayEven.map((elem) => elem + n);
+console.log(secondArray);
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
