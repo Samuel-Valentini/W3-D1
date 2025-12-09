@@ -264,6 +264,14 @@ console.log(moviesNewmillennium(movies));
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+const findImdbID = (arr, id) => arr.find((element) => element.imdbID === id);
+
+console.log(findImdbID(movies, "tt0848228"));
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+const findMovieIndex = (arr, y) => arr.findIndex((movie) => movie.Year === y);
+
+console.log(findMovieIndex(movies, "1984"));
