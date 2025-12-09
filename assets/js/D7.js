@@ -225,7 +225,38 @@ function olderFilm(arr) {
     }
   });
 
-  return olderFilmName;
+  let count = 0;
+  arr.forEach((movie) => {
+    if (parseInt(movie.Year) === olderFilm) {
+      count += 1;
+    }
+  });
+
+  // if (count === 1) {
+  //   return olderFilmName;
+  // } else {
+  //   let olderFilmNameArr = [];
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (parseInt(arr[i].Year) === olderFilm) {
+  //       olderFilmNameArr.push(arr[i].Title);
+  //     }
+  //   }
+  //   olderFilmName = olderFilmNameArr.join(", ");
+  //   return olderFilmName;
+  // }
+
+  if (count === 1) {
+    return olderFilmName;
+  } else {
+    let olderFilmNameArr = [];
+    arr.forEach((movie) => {
+      if (parseInt(movie.Year) === olderFilm) {
+        olderFilmNameArr.push(movie.Title);
+      }
+    });
+    olderFilmName = olderFilmNameArr.join(", ");
+    return olderFilmName;
+  }
 }
 
 console.log(olderFilm(movies));
